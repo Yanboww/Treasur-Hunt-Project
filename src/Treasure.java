@@ -4,6 +4,7 @@ public class Treasure {
     private static final List<String> treasureStorage = new ArrayList<>();
     private static String currentTreasure;
     private static boolean treasureFound;
+    private static String treasureStatus;
 
     public static void genTreasure()
     {
@@ -53,18 +54,23 @@ public class Treasure {
     public static boolean treasureHunt()
     {
         if (treasureFound) {
-            System.out.println("You already found the treasure in this town.");
+            treasureStatus = "You already found the treasure in this town.";
             return false;
         }
         int randomInt = (int)(Math.random()*2)+1;
         if(randomInt==1){
-            System.out.println("You found the glorious" + currentTreasure+"!");
+            treasureStatus = "You found the glorious " + currentTreasure+"!";
             addTreasure(currentTreasure);
             treasureFound = true;
             return true;
         }
-        System.out.println("You did not find any treasure!");
+        treasureStatus = "You did not find any treasure!";
         return false;
+    }
+
+    public static String getTreasureStatus()
+    {
+        return treasureStatus;
     }
 
 
