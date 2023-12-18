@@ -14,7 +14,6 @@ public class TreasureHunter
     private boolean hardMode;
 
 
-
     //Constructor
     /**
      * Constructs the Treasure Hunter game.
@@ -105,8 +104,6 @@ public class TreasureHunter
 
         while (!(choice.equals("X") || choice.equals("x")) && hunter.getGold() > 0 && Treasure.returnTreasureStorage().size() < 3)
         {
-            System.out.println();
-            System.out.println(currentTown.getLatestNews());
             System.out.println("***");
             System.out.println(hunter);
             System.out.println(currentTown);
@@ -121,6 +118,8 @@ public class TreasureHunter
             choice = scanner.nextLine();
             choice = choice.toUpperCase();
             processChoice(choice);
+            System.out.println();
+            System.out.println(currentTown.getLatestNews());
         }
 
     }
