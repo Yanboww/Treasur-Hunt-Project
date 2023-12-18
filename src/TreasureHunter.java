@@ -90,6 +90,7 @@ public class TreasureHunter
         // an object with an object of a different class
         currentTown.hunterArrives(hunter);
         Treasure.genTreasure();
+        Treasure.setTreasureFound(false);
     }
 
     /**

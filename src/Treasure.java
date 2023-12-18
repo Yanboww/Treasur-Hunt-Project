@@ -3,7 +3,7 @@ import java.util.List;
 public class Treasure {
     private static final List<String> treasureStorage = new ArrayList<>();
     private static String currentTreasure;
-    public static String treasureStatus;
+    private static boolean treasureFound;
 
     public static void genTreasure()
     {
@@ -26,6 +26,14 @@ public class Treasure {
         return currentTreasure;
     }
 
+    public static boolean isTreasureFound() {
+        return treasureFound;
+    }
+
+    public static void setTreasureFound(boolean treasureFound) {
+        Treasure.treasureFound = treasureFound;
+    }
+
     public static void addTreasure(String treasure)
     {
         if(treasureStorage.contains(treasure))
@@ -44,18 +52,19 @@ public class Treasure {
 
     public static boolean treasureHunt()
     {
+        if (treasureFound) {
+            System.out.println("You already found the treasure in this town.");
+            return false;
+        }
         int randomInt = (int)(Math.random()*2)+1;
         if(randomInt==1){
-            System.out.println();
-            treasureStatus = "You found the glorious " + currentTreasure+"!";
+            System.out.println("You found the glorious" + currentTreasure+"!");
             addTreasure(currentTreasure);
+            treasureFound = true;
             return true;
         }
-        treasureStatus = "You did not find any treasure!";
+        System.out.println("You did not find any treasure!");
         return false;
-    }
-    public static String getTreasureStatus(){
-        return treasureStatus;
     }
 
 
