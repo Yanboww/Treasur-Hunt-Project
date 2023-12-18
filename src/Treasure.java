@@ -44,7 +44,11 @@ public class Treasure {
     public static boolean treasureHunt()
     {
         int randomInt = (int)(Math.random()*2)+1;
-        if(randomInt==1)return true;
+        if(randomInt==1){
+            System.out.println("You found the glorious" + currentTreasure+"!");
+            addTreasure(currentTreasure);
+            return true;
+        }
        return false;
     }
 
