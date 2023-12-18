@@ -49,7 +49,7 @@ public class Treasure {
             addTreasure(currentTreasure);
             return true;
         }
-       return false;
+        return false;
     }
 
 
