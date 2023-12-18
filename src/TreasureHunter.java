@@ -12,6 +12,7 @@ public class TreasureHunter
     private Town currentTown;
     private Hunter hunter;
     private boolean hardMode;
+    private boolean isGameOver;
 
 
 
@@ -25,6 +26,7 @@ public class TreasureHunter
         currentTown = null;
         hunter = null;
         hardMode = false;
+        isGameOver = false;
     }
 
     // starts the game; this is the only public method
@@ -125,6 +127,7 @@ public class TreasureHunter
     }
 
     private void end() {
+        isGameOver = true;
         if (hunter.getGold() <= 0) {
             System.out.println("You ran out of gold. GAME OVER!");
         }
