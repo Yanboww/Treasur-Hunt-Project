@@ -13,6 +13,8 @@ public class TreasureHunter
     private Hunter hunter;
     private boolean hardMode;
 
+
+
     //Constructor
     /**
      * Constructs the Treasure Hunter game.
@@ -116,6 +118,18 @@ public class TreasureHunter
             choice = scanner.nextLine();
             choice = choice.toUpperCase();
             processChoice(choice);
+        }
+    }
+
+    private void end() {
+        if (hunter.getGold() <= 0) {
+            System.out.println("You ran out of gold. GAME OVER!");
+        }
+        else if (Treasure.returnTreasureStorage().size() >= 3) {
+            System.out.println("You found three treasures. You are an epic gamer: YOU WIN!");
+        }
+        else {
+            System.out.println("Something went wrong??");
         }
     }
 
