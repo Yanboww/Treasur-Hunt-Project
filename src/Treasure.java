@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 public class Treasure {
-    private static List<String> treasureStorage = new ArrayList<>();
+    private static final List<String> treasureStorage = new ArrayList<>();
     private static String currentTreasure;
 
     public static void genTreasure()
@@ -44,13 +44,8 @@ public class Treasure {
     public static boolean treasureHunt()
     {
         int randomInt = (int)(Math.random()*2)+1;
-        if(randomInt==1)
-        {
-            return true;
-        }
-        else{
-            return false;
-        }
+        if(randomInt==1)return true;
+       return false;
     }
 
 
