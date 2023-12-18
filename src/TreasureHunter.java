@@ -33,6 +33,7 @@ public class TreasureHunter
         welcomePlayer();
         enterTown();
         showMenu();
+        end();
     }
 
     /**
