@@ -20,5 +20,25 @@ public class Treasure {
         }
 
     }
+    public static String getCurrentTreasure()
+    {
+        return currentTreasure;
+    }
+
+    public static void addTreasure(String treasure)
+    {
+        if(treasureStorage.contains(treasure))
+        {
+            System.out.println("Duplicate Treasure! You curled your arm and threw, never to see the treasure again");
+        }
+        else{
+            treasureStorage.add(treasure);
+        }
+    }
+
+    public static List<String> returnTreasureStorage()
+    {
+        return treasureStorage;
+    }
 
 }
