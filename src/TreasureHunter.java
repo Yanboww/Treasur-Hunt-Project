@@ -13,6 +13,8 @@ public class TreasureHunter
     private Hunter hunter;
     private boolean hardMode;
 
+
+
     //Constructor
     /**
      * Constructs the Treasure Hunter game.
@@ -99,7 +101,7 @@ public class TreasureHunter
         Scanner scanner = new Scanner(System.in);
         String choice = "";
 
-        while (!(choice.equals("X") || choice.equals("x")))
+        while (!(choice.equals("X") || choice.equals("x")) && hunter.getGold() > 0 && Treasure.returnTreasureStorage().size() < 3)
         {
             System.out.println();
             System.out.println(currentTown.getLatestNews());
@@ -110,12 +112,26 @@ public class TreasureHunter
             System.out.println("(S)ell something at the shop.");
             System.out.println("(M)ove on to a different town.");
             System.out.println("(L)ook for trouble!");
+            System.out.println("(H)unt for treasure!");
             System.out.println("Give up the hunt and e(X)it.");
             System.out.println();
             System.out.print("What's your next move? ");
             choice = scanner.nextLine();
             choice = choice.toUpperCase();
             processChoice(choice);
+        }
+
+    }
+
+    private void end() {
+        if (hunter.getGold() <= 0) {
+            System.out.println("You ran out of gold. GAME OVER!");
+        }
+        else if (Treasure.returnTreasureStorage().size() >= 3) {
+            System.out.println("You found three treasures. You are an epic gamer: YOU WIN!");
+        }
+        else {
+            System.out.println("Something went wrong??");
         }
     }
 
@@ -141,6 +157,10 @@ public class TreasureHunter
         else if (choice.equals("L") || choice.equals("l"))
         {
             currentTown.lookForTrouble();
+        }
+        else if (choice.equals("H") || choice.equals("h"))
+        {
+            Treasure.treasureHunt();
         }
         else if (choice.equals("X") || choice.equals("x"))
         {
