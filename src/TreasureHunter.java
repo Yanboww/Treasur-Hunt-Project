@@ -4,6 +4,7 @@
  * It handles all of the display based on the messages it receives from the Town object.
  *
  */
+import java.io.StringReader;
 import java.util.Scanner;
 
 public class TreasureHunter
@@ -107,6 +108,7 @@ public class TreasureHunter
         {
             System.out.println();
             System.out.println(currentTown.getLatestNews());
+            System.out.println(Treasure.getTreasureStatus());
             System.out.println("***");
             System.out.println(hunter);
             System.out.println(currentTown);
@@ -162,7 +164,7 @@ public class TreasureHunter
         }
         else if (choice.equals("H") || choice.equals("h"))
         {
-            Treasure.treasureHunt();
+             Treasure.treasureHunt();
         }
         else if (choice.equals("X") || choice.equals("x"))
         {

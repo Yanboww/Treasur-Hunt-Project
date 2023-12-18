@@ -3,6 +3,7 @@ import java.util.List;
 public class Treasure {
     private static final List<String> treasureStorage = new ArrayList<>();
     private static String currentTreasure;
+    public static String treasureStatus;
 
     public static void genTreasure()
     {
@@ -45,12 +46,16 @@ public class Treasure {
     {
         int randomInt = (int)(Math.random()*2)+1;
         if(randomInt==1){
-            System.out.println("You found the glorious" + currentTreasure+"!");
+            System.out.println();
+            treasureStatus = "You found the glorious " + currentTreasure+"!";
             addTreasure(currentTreasure);
             return true;
         }
-        System.out.println("You did not find any treasure!");
+        treasureStatus = "You did not find any treasure!";
         return false;
+    }
+    public static String getTreasureStatus(){
+        return treasureStatus;
     }
 
 

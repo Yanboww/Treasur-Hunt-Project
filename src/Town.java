@@ -31,7 +31,6 @@ public class Town
         // higher toughness = more likely to be a tough town
         toughTown = (Math.random() < toughness);
     }
-
     public String getLatestNews()
     {
         return printMessage;
