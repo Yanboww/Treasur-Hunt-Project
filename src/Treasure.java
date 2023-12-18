@@ -49,6 +49,7 @@ public class Treasure {
             addTreasure(currentTreasure);
             return true;
         }
+        System.out.println("You did not find any treasure!");
         return false;
     }
 
