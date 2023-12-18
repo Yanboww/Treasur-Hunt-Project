@@ -72,6 +72,10 @@ public class Treasure {
     {
         return treasureStatus;
     }
+    public static void changeTreasureStatus()
+    {
+        treasureStatus ="";
+    }
 
 
 }

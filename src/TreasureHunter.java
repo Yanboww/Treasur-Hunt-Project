@@ -103,7 +103,7 @@ public class TreasureHunter
         Scanner scanner = new Scanner(System.in);
         String choice = "";
 
-        while (!(choice.equals("X") || choice.equals("x")) && hunter.getGold() > 0 && Treasure.returnTreasureStorage().size() < 3)
+        while (!(choice.equals("X") || choice.equals("x")) && hunter.getGold() > 0 && Treasure.returnTreasureStorage().size() <3)
         {
             System.out.println("***");
             System.out.println(hunter);
@@ -122,6 +122,7 @@ public class TreasureHunter
             System.out.println();
             System.out.println(currentTown.getLatestNews());
             System.out.println(Treasure.getTreasureStatus());
+            Treasure.changeTreasureStatus();
         }
 
     }
