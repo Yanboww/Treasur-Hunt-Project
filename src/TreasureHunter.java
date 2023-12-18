@@ -92,6 +92,7 @@ public class TreasureHunter
         // constructor for Town, but this illustrates another way to associate
         // an object with an object of a different class
         currentTown.hunterArrives(hunter);
+        Treasure.genTreasure();
     }
 
     /**
