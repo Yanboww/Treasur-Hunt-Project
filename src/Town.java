@@ -101,6 +101,10 @@ public class Town
         {
             noTroubleChance = 0.66;
         }
+        else if(TreasureHunter.isEasyMode())
+        {
+            noTroubleChance = 0;
+        }
         else
         {
             noTroubleChance = 0.33;
