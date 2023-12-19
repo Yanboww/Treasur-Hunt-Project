@@ -62,7 +62,7 @@ public class Town
     public boolean leaveTown()
     {
         if (TreasureHunter.isEasyMode()) {
-            printMessage = "You cross the " + terrain.getTerrainName() + ".";
+            printMessage = "You cross the " + terrain.getTerrainName() + " with your pure willpower.";
             return true;
         }
 
