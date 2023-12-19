@@ -96,21 +96,21 @@ public class Town
      */
     public void lookForTrouble()
     {
-        double noTroubleChance;
+        double troubleChance;
         if (toughTown)
         {
-            noTroubleChance = 0.66;
+            troubleChance = 0.66;
         }
         else
         {
-            noTroubleChance = 0.33;
+            troubleChance = 0.33;
         }
         if(TreasureHunter.isEasyMode())
         {
-            noTroubleChance = 0;
+            troubleChance = 1000;
         }
 
-        if (Math.random() > noTroubleChance)
+        if (Math.random() > troubleChance)
         {
             printMessage = "You couldn't find any trouble";
         }
@@ -119,10 +119,10 @@ public class Town
             printMessage = "You want trouble, stranger!  You got it!\nOof! Umph! Ow!\n";
             int goldDiff = (int)(Math.random() * 10) + 1;
             if (TreasureHunter.isEasyMode()) {
-                noTroubleChance = 0;
+                troubleChance = 0;
                 goldDiff *= 5;
             }
-            if (Math.random() > noTroubleChance)
+            if (Math.random() > troubleChance)
             {
                 printMessage += "Okay, stranger! You proved yer mettle. Here, take my gold.";
                 printMessage += "\nYou won the brawl and receive " +  goldDiff + " gold.";
