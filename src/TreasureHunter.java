@@ -48,9 +48,6 @@ public class TreasureHunter
         System.out.print("What's your name, Hunter? ");
         String name = scanner.nextLine();
 
-        // set hunter instance variable
-        hunter = new Hunter(name, 10);
-
         System.out.print("Hard mode, Normal Mode or Easy mode (h/n/e?): ");
         String mode = scanner.nextLine();
         if (mode.equals("y") || mode.equals("Y"))
@@ -61,6 +58,12 @@ public class TreasureHunter
         {
             easyMode = true;
         }
+        int startingGold = 10;
+        if(isEasyMode())
+        {
+            startingGold = 50;
+        }
+        hunter = new Hunter(name, startingGold);
     }
     public static boolean isEasyMode()
     {
