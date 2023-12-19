@@ -61,6 +61,11 @@ public class Town
      */
     public boolean leaveTown()
     {
+        if (TreasureHunter.isEasyMode()) {
+            printMessage = "You cross the " + terrain.getTerrainName() + ".";
+            return true;
+        }
+
         boolean canLeaveTown = terrain.canCrossTerrain(hunter);
         if (canLeaveTown)
         {
