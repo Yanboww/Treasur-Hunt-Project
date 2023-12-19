@@ -12,7 +12,7 @@ public class TreasureHunter
     private Town currentTown;
     private Hunter hunter;
     private boolean hardMode;
-    private boolean easyMode;
+    private static  boolean easyMode;
 
 
     //Constructor
@@ -67,7 +67,7 @@ public class TreasureHunter
     }
     public static boolean isEasyMode()
     {
-        return isEasyMode();
+        return easyMode;
     }
 
     /**
