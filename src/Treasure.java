@@ -37,7 +37,7 @@ public class Treasure {
 
     public static void addTreasure(String treasure)
     {
-        if(treasureStorage.contains(treasure))
+        if(treasureStorage.contains(treasure) && !TreasureHunter.isEasyMode())
         {
             System.out.println("Duplicate Treasure! You curled your arm and threw, never to see the treasure again");
         }
