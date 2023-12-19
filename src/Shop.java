@@ -12,6 +12,14 @@ public class Shop
     private static final int MACHETE_COST = 6;
     private static final int HORSE_COST = 12;
     private static final int BOAT_COST = 20;
+    public static final String reset = "\u001B[0m";
+    public static final String green = "\u001B[32m";
+    public static final String blue = "\u001B[34m";
+    public static final String white = "\u001B[37m";
+    public static final String purple = "\u001B[35m";
+    public static final String red = " \u001B[31m";
+
+    public static final String yellow = "\u001B[33m";
 
     // instance variables
     private double markdown;
@@ -85,11 +93,11 @@ public class Shop
      */
     public String inventory()
     {
-        String str = "Water: " + WATER_COST + " gold\n";
-        str += "Rope: " + ROPE_COST + " gold\n";
-        str += "Machete: " + MACHETE_COST + " gold\n";
-        str += "Horse: " + HORSE_COST + " gold\n";
-        str += "Boat: " + BOAT_COST + " gold\n";
+        String str = blue + "Water: " + reset + yellow + WATER_COST +" gold\n" + reset;
+        str += green + "Rope: " +reset+yellow + ROPE_COST +  " gold\n" +reset;
+        str += red + "Machete: " +reset+ yellow +MACHETE_COST +   " gold\n" + reset;
+        str += white+"Horse: "+reset + yellow +HORSE_COST + " gold\n" + reset;
+        str += purple+"Boat: "+reset +  yellow+BOAT_COST  +  " gold\n" + reset;
 
         return str;
     }
