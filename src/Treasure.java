@@ -60,7 +60,7 @@ public class Treasure {
         int randomInt = (int)(Math.random()*2)+1;
         if(randomInt==1){
             treasureStatus = "You found the glorious " + currentTreasure+"!";
-            if(TreasureHunter.isEasyMode())
+            if(TreasureHunter.isEasyMode() && treasureStorage.contains(currentTreasure))
             {
                 treasureStatus = "You already have the " + currentTreasure +  " but we'll keep it anyways!";
             }
