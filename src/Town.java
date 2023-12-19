@@ -109,6 +109,10 @@ public class Town
         {
             printMessage = "You want trouble, stranger!  You got it!\nOof! Umph! Ow!\n";
             int goldDiff = (int)(Math.random() * 10) + 1;
+            if (TreasureHunter.isEasyMode()) {
+                noTroubleChance = 0;
+                goldDiff *= 5;
+            }
             if (Math.random() > noTroubleChance)
             {
                 printMessage += "Okay, stranger! You proved yer mettle. Here, take my gold.";
