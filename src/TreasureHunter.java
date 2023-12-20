@@ -16,7 +16,6 @@ public class TreasureHunter
     private static  boolean easyMode;
     private static boolean cheatMode;
 
-
     //Constructor
     /**
      * Constructs the Treasure Hunter game.
