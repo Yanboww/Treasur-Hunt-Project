@@ -10,6 +10,7 @@ public class TreasureHunter
 {
     //Instance variables
     private Town currentTown;
+    private Casino casino;
     private Hunter hunter;
     private boolean hardMode;
     private static  boolean easyMode;
@@ -24,6 +25,7 @@ public class TreasureHunter
     {
         // these will be initialized in the play method
         currentTown = null;
+        casino = null;
         hunter = null;
         hardMode = false;
     }
@@ -74,6 +76,7 @@ public class TreasureHunter
             startingGold = 50;
         }
         hunter = new Hunter(name, startingGold);
+        casino = new Casino(hunter);
     }
     public static boolean isEasyMode()
     {
@@ -141,6 +144,7 @@ public class TreasureHunter
             System.out.println("(M)ove on to a different town.");
             System.out.println("(L)ook for trouble!");
             System.out.println("(H)unt for treasure!");
+            System.out.println("(C)heck out the Casino");
             System.out.println("Give up the hunt and e(X)it.");
             System.out.println();
             System.out.print("What's your next move? ");
@@ -197,6 +201,10 @@ public class TreasureHunter
         else if (choice.equals("X") || choice.equals("x"))
         {
             System.out.println("Fare thee well, " + hunter.getHunterName() + "!");
+        }
+        else if (choice.equals("C") || choice.equals("c"))
+        {
+            casino.enterCasino();
         }
         else
         {
