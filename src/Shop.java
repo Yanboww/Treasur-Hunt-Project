@@ -7,11 +7,11 @@ import java.util.Scanner;
 public class Shop
 {
     // constants
-    private static final int WATER_COST = 2;
-    private static final int ROPE_COST = 4;
-    private static final int MACHETE_COST = 6;
-    private static final int HORSE_COST = 12;
-    private static final int BOAT_COST = 20;
+    private static  int WATER_COST = 2;
+    private static  int ROPE_COST = 4;
+    private static  int MACHETE_COST = 6;
+    private static  int HORSE_COST = 12;
+    private static  int BOAT_COST = 20;
     public static final String reset = "\u001B[0m";
     public static final String green = "\u001B[32m";
     public static final String blue = "\u001B[34m";
@@ -164,22 +164,42 @@ public class Shop
     {
         if (item.equals("Water") || item.equals("water") || item.equals("W") || item.equals("w"))
         {
+            if(TreasureHunter.isCheatMode())
+            {
+                WATER_COST =1;
+            }
             return WATER_COST;
         }
         else if (item.equals("Rope") || item.equals("rope") || item.equals("R") || item.equals("r"))
         {
+            if(TreasureHunter.isCheatMode())
+            {
+                ROPE_COST =1;
+            }
             return ROPE_COST;
         }
         else if (item.equals("Machete") || item.equals("machete") || item.equals("M") || item.equals("m"))
         {
+            if(TreasureHunter.isCheatMode())
+            {
+                MACHETE_COST =1;
+            }
             return MACHETE_COST;
         }
         else if (item.equals("Horse") || item.equals("horse") || item.equals("H") || item.equals("h"))
         {
+            if(TreasureHunter.isCheatMode())
+            {
+                HORSE_COST =1;
+            }
             return HORSE_COST;
         }
         else if (item.equals("Boat") || item.equals("boat") || item.equals("B") || item.equals("b"))
         {
+            if(TreasureHunter.isCheatMode())
+            {
+                BOAT_COST =1;
+            }
             return BOAT_COST;
         }
         else
