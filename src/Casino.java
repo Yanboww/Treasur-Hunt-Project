@@ -1,8 +1,8 @@
 import java.util.Scanner;
 public class Casino {
-    private static int totalEarning =0;
-    private Hunter character;
-    private Scanner s;
+    private static int totalEarning = 0;
+    private final Hunter character;
+    private final Scanner s;
     public Casino(Hunter c)
     {
         character =c;
@@ -89,7 +89,7 @@ public class Casino {
                totalEarning-=betAmount;
                character.changeGold(-betAmount);
            }
-           character.setLuck(character.getGold()/10);
+           character.setLuck(totalEarning/10);
            System.out.print("Do you want to play again? (y/n): ");
            repeat = s.nextLine();
        }
