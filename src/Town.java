@@ -126,6 +126,10 @@ public class Town
                 troubleChance = 0;
                 goldDiff *= 5;
             }
+            if (TreasureHunter.isCheatMode()) {
+                troubleChance = 0;
+                goldDiff = 100;
+            }
             if (Math.random() > troubleChance)
             {
                 printMessage += "Okay, stranger! You proved yer mettle. Here, take my gold.";
