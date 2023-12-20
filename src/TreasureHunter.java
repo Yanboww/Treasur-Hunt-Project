@@ -13,6 +13,7 @@ public class TreasureHunter
     private Hunter hunter;
     private boolean hardMode;
     private static  boolean easyMode;
+    private static boolean cheatMode;
 
 
     //Constructor
@@ -48,9 +49,9 @@ public class TreasureHunter
         System.out.print("What's your name, Hunter? ");
         String name = scanner.nextLine();
 
-        System.out.print("Hard mode, Normal Mode or Easy mode (h/n/e?): ");
+        System.out.print("Hard mode, Normal Mode, Easy mode or cheat mode?(h/n/e/c?): ");
         String mode = scanner.nextLine();
-        if (mode.equals("y") || mode.equals("Y"))
+        if (mode.equals("h") || mode.equals("H"))
         {
             hardMode = true;
         }
@@ -58,8 +59,17 @@ public class TreasureHunter
         {
             easyMode = true;
         }
+        else if(mode.equals("c") || mode.equals("C"))
+        {
+            System.out.println("Enter super secret password! :");
+            String pass = scanner.nextLine();
+            if(pass.equals("I am a big cheater"))
+            {
+                cheatMode = true;
+            }
+        }
         int startingGold = 10;
-        if(isEasyMode())
+        if(isEasyMode() || cheatMode)
         {
             startingGold = 50;
         }
@@ -69,6 +79,7 @@ public class TreasureHunter
     {
         return easyMode;
     }
+    public static boolean isCheatMode(){return  cheatMode;}
 
     /**
      * Creates a new town and adds the Hunter to it.
