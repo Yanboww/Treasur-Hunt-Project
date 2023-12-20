@@ -11,6 +11,7 @@ public class Hunter
     private String hunterName;
     private String kit;
     private int gold;
+    private int luck;
 
 
     //Constructor
@@ -42,6 +43,10 @@ public class Hunter
         return gold;
     }
 
+    public int getLuck() {
+        return luck;
+    }
+
     public void changeGold(int modifier)
     {
         gold += modifier;
@@ -49,6 +54,10 @@ public class Hunter
         {
             gold = 0;
         }
+    }
+
+    public void setLuck(int luck) {
+        this.luck = luck;
     }
 
     /**
