@@ -57,8 +57,8 @@ public class Treasure {
             treasureStatus = "You already found the treasure in this town.";
             return false;
         }
-        int randomInt = (int)(Math.random()*2)+1;
-        if(randomInt==1 || TreasureHunter.isEasyMode()){
+        int randomInt = (int)(Math.random()*100)+1 + Hunter.getLuck();
+        if(randomInt >= 80 || TreasureHunter.isEasyMode()){
             treasureStatus = "You found the glorious " + currentTreasure+"!";
             if(TreasureHunter.isEasyMode()){
                 treasureStatus = "Wow you are really good at finding treasure the " + currentTreasure+ " was right in front of you this whole time!";
