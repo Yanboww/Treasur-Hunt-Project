@@ -56,7 +56,7 @@ public class Hunter
         }
     }
 
-    public static void setLuck(int l) {luck = l;
+    public static void setLuck(int l) {luck = 2*l;
     }
 
     /**
