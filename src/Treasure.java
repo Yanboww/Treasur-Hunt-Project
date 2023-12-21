@@ -58,20 +58,20 @@ public class Treasure {
             return false;
         }
         int randomInt = (int)(Math.random()*100)+1 + Hunter.getLuck();
-        if(randomInt >= 80 || TreasureHunter.isEasyMode()){
+        if(randomInt >= 80 || TreasureHunter.isCheatMode()){
             treasureStatus = "You found the glorious " + currentTreasure+"!";
-            if(TreasureHunter.isEasyMode()){
+            if(TreasureHunter.isCheatMode()){
                 treasureStatus = "Wow you are really good at finding treasure the " + currentTreasure+ " was right in front of you this whole time!";
             }
-            if(TreasureHunter.isEasyMode() && treasureStorage.contains(currentTreasure))
+            if(TreasureHunter.isCheatMode() && treasureStorage.contains(currentTreasure))
             {
                 treasureStatus = "You already have the " + currentTreasure +  " but we'll keep it anyways!";
             }
             if(Hunter.getLuck() >= 4) {
-                System.out.println("You're pretty lucky too, the treasure was close by!");
+                treasureStatus = "You're pretty lucky! The " + currentTreasure+ " was close by and you found it!";
             }
             if(Hunter.getLuck() <= -4) {
-                System.out.println("Wow, you're pretty unlucky aren't you? It was quite a pain to find it.");
+                treasureStatus = "...You're quite unlucky. It was difficult, but you managed to find " + currentTreasure+ ".";
             }
             addTreasure(currentTreasure);
             treasureFound = true;
