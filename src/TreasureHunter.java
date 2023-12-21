@@ -135,6 +135,13 @@ public class TreasureHunter
 
         while (!(choice.equals("X") || choice.equals("x")) && hunter.getGold() > 0 && Treasure.returnTreasureStorage().size() <3)
         {
+            System.out.println();
+            System.out.println(currentTown.getLatestNews());
+            if(!Treasure.getTreasureStatus().isEmpty())
+            {
+                System.out.println(Treasure.getTreasureStatus());
+            }
+            Treasure.changeTreasureStatus();
             System.out.println("***");
             System.out.println(hunter);
             System.out.println(currentTown);
@@ -150,18 +157,12 @@ public class TreasureHunter
             choice = scanner.nextLine();
             choice = choice.toUpperCase();
             processChoice(choice);
-            System.out.println();
-            System.out.println(currentTown.getLatestNews());
-            if(!Treasure.getTreasureStatus().isEmpty())
-            {
-                System.out.println(Treasure.getTreasureStatus());
-            }
-            Treasure.changeTreasureStatus();
         }
 
     }
 
     private void end() {
+        System.out.println();
         if (hunter.getGold() <= 0) {
             System.out.println("You ran out of gold. GAME OVER!");
         }
