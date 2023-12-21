@@ -153,6 +153,7 @@ public class TreasureHunter
             System.out.println("(L)ook for trouble!");
             System.out.println("(H)unt for treasure!");
             System.out.println("(C)heck out the Casino");
+            System.out.println("(G)et your inventory");
             System.out.println("Give up the hunt and e(X)it.");
             System.out.println();
             System.out.print("What's your next move? ");
@@ -215,6 +216,13 @@ public class TreasureHunter
         else if (choice.equals("C") || choice.equals("c"))
         {
             casino.enterCasino();
+        }
+        else if(choice.equals("G") || choice.equals("g"))
+        {
+            System.out.println();
+            System.out.println("You have:");
+            System.out.println(Treasure.returnTreasureStorage());
+            System.out.println(hunter.getInventory());
         }
         else
         {
