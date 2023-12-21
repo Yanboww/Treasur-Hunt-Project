@@ -189,7 +189,7 @@ public class Hunter
      */
     public String toString()
     {
-        String str = hunterName + " has " + gold + " gold";
+        String str = hunterName + " has " + gold + " gold\n" + hunterName + " has " + luck + " luck";
         if (!kit.equals(""))
         {
             str += " and " + getInventory();
