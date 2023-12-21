@@ -55,10 +55,12 @@ public class TreasureHunter
         if (mode.equals("h") || mode.equals("H"))
         {
             hardMode = true;
+            Hunter.setLuck(-4);
         }
         else if(mode.equals("e") || mode.equals("E"))
         {
             easyMode = true;
+            Hunter.setLuck(4);
         }
         else if(mode.equals("c") || mode.equals("C"))
         {
