@@ -160,16 +160,21 @@ public class TreasureHunter
             choice = choice.toUpperCase();
             processChoice(choice);
         }
+       if(currentTown.getLatestNews().contains("gold"))
+        {
+            System.out.println();
+            System.out.println(currentTown.getLatestNews());
+        }
 
     }
 
     private void end() {
         System.out.println();
         if (hunter.getGold() <= 0) {
-            System.out.println("You ran out of gold. GAME OVER!");
+            System.out.println("You ran out of gold." + Shop.red + " GAME OVER!" + Shop.reset);
         }
         else if (Treasure.returnTreasureStorage().size() >= 3) {
-            System.out.println("You found three treasures. You are an epic gamer: YOU WIN!");
+            System.out.println("You found three treasures. You are an epic gamer: " + Shop.green + " YOU WIN!" + Shop.reset);
         }
         else {
             System.out.println("Something went wrong??");
