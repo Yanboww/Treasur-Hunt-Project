@@ -35,17 +35,23 @@ public class Casino {
         System.out.println("Welcome to Lucky Dice! The rules are simple:");
         System.out.println("- If the hunter gets the number exactly right, they get double their gold!\n" +
                 "- If the hunter gets within 2 of the number, they get their gold back.\n" +
-                "- if the hunter is more than 2 away from the number, they lose all of their gold\n");
+                "- if the hunter is more than 2 away from the number, they lose all of their gold");
         String repeat = "y";
-       while(repeat.equals("y") || repeat.equals("Y"))
+       while(repeat.equals("y") || repeat.equals("Y") )
        {
-           System.out.print("How much gold do you want to bet?: ");
+           System.out.println();
+           System.out.print("How much gold do you want to bet? (x) to exit: ");
+           String next = s.nextLine();
            int betAmount;
            try{
-               betAmount = Integer.parseInt(s.nextLine());
+               betAmount = Integer.parseInt(next);
            }
            catch(NumberFormatException e)
            {
+               if(next.equals("x") || next.equals("X"))
+               {
+                   break;
+               }
                System.out.println("That is not a valid amount!");
                betAmount =1000000000;
            }
@@ -67,9 +73,26 @@ public class Casino {
                    betAmount =1000000000;
                }
            }
+           int guess = 0;
+           boolean isNotValid = true;
            System.out.println("Okay dear customer! You have bet " + betAmount + " gold!");
-           System.out.print("please enter you guess between 1 and 12: ");
-           int guess = Integer.parseInt(s.nextLine());
+           while(isNotValid)
+           {
+               System.out.print("please enter you guess between 1 and 12: ");
+               try{
+                   guess = Integer.parseInt(s.nextLine());
+                   isNotValid = false;
+                   if(guess>12 || guess<1)
+                   {
+                       guess = Integer.parseInt("i");
+                   }
+               }
+               catch (NumberFormatException e)
+               {
+                   isNotValid = true;
+                   System.out.println("Please enter a valid number!");
+               }
+           }
            int doubleDice = (int)(Math.random()*12)+1;
            if(guess == doubleDice)
            {
