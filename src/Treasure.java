@@ -67,6 +67,12 @@ public class Treasure {
             {
                 treasureStatus = "You already have the " + currentTreasure +  " but we'll keep it anyways!";
             }
+            if(Hunter.getLuck() >= 4) {
+                System.out.println("You're pretty lucky too, the treasure was close by!");
+            }
+            if(Hunter.getLuck() <= -4) {
+                System.out.println("Wow, you're pretty unlucky aren't you? It was quite a pain to find it.");
+            }
             addTreasure(currentTreasure);
             treasureFound = true;
             return true;
