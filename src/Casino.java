@@ -73,10 +73,11 @@ public class Casino {
            int doubleDice = (int)(Math.random()*12)+1;
            if(guess == doubleDice)
            {
-               System.out.println("Congratulations! You were exactly on the mark!");
-               System.out.println("You win " + betAmount*2 + " gold!");
-               character.changeGold(betAmount);
                totalEarning+=betAmount*2;
+               character.setLuck(totalEarning/10);
+               System.out.println("Congratulations! You were exactly on the mark!");
+               System.out.println("You win " + betAmount*2 + " gold! Your luck is now: " + character.getLuck());
+               character.changeGold(betAmount);
            }
            else if(guess-2 == doubleDice || guess+2 == doubleDice)
            {
@@ -84,12 +85,12 @@ public class Casino {
                System.out.println("You received your " + betAmount + " gold back");
            }
            else{
-               System.out.println("Wow you lost. Maybe you should try again! Most gamblers quit...BLAH BLAH BLAH");
-               System.out.println("You ignored the host as they took your " + betAmount + " gold away");
                totalEarning-=betAmount;
+               character.setLuck(totalEarning/10);
+               System.out.println("Wow you lost. Maybe you should try again! Most gamblers quit...BLAH BLAH BLAH");
+               System.out.println("You ignored the host as they took your " + betAmount + " gold away. Your luck is now: " + character.getLuck());
                character.changeGold(-betAmount);
            }
-           character.setLuck(totalEarning/10);
            if(character.getGold()>0)
            {
                System.out.print("Do you want to play again? (y/n): ");
