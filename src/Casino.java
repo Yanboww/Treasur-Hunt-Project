@@ -90,9 +90,17 @@ public class Casino {
                character.changeGold(-betAmount);
            }
            character.setLuck(totalEarning/10);
-           System.out.print("Do you want to play again? (y/n): ");
-           repeat = s.nextLine();
+           if(character.getGold()>0)
+           {
+               System.out.print("Do you want to play again? (y/n): ");
+               repeat = s.nextLine();
+           }
+           else{
+               System.out.println("You ran out of money! You are being kicked out of the casino");
+               repeat = "loser";
+           }
        }
+       System.out.println("Buh Bye make sure to bring more money next time.");
        
     }
 }
