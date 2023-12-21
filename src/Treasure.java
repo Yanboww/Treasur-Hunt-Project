@@ -4,7 +4,7 @@ public class Treasure {
     private static final List<String> treasureStorage = new ArrayList<>();
     private static String currentTreasure;
     private static boolean treasureFound;
-    private static String treasureStatus;
+    private static String treasureStatus ="";
 
     public static void genTreasure()
     {

@@ -152,7 +152,10 @@ public class TreasureHunter
             processChoice(choice);
             System.out.println();
             System.out.println(currentTown.getLatestNews());
-            System.out.println(Treasure.getTreasureStatus());
+            if(!Treasure.getTreasureStatus().isEmpty())
+            {
+                System.out.println(Treasure.getTreasureStatus());
+            }
             Treasure.changeTreasureStatus();
         }
 
