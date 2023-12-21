@@ -121,6 +121,10 @@ public class Town
             {
                 printMessage ="You have trouble rizz. The trouble has come to YOU!\nOof! Umph! Ow!\n";
             }
+            if(Math.random()== troubleChance)
+            {
+                printMessage = "You ran into a fearsome foe named Sam\n";
+            }
             int goldDiff = (int)(Math.random() * 10) + 1;
             if (TreasureHunter.isEasyMode()) {
                 troubleChance = 0;
@@ -132,14 +136,26 @@ public class Town
             }
             if (Math.random() > troubleChance)
             {
-                printMessage += "Okay, stranger! You proved yer mettle. Here, take my gold.";
-                printMessage += "\nYou won the brawl and receive " +  goldDiff + " gold.";
+                if(Math.random()==troubleChance && printMessage.contains("Sam"))
+                {
+                    goldDiff*=100;
+                    printMessage+="You defeated the fraud, Sam\n";
+                    printMessage +="Some how you win and find " + Shop.yellow + goldDiff + Shop.reset +  Shop.red+ " on Sam cold dead body!" + Shop.reset;
+                }
+                else{
+                    printMessage += "Okay, stranger! You proved yer mettle. Here, take my gold.";
+                    printMessage += "\nYou won the brawl and receive " +  goldDiff + " gold.";
+                }
                 hunter.changeGold(goldDiff);
             }
             else
             {
-                printMessage += "That'll teach you to go lookin' fer trouble in MY town! Now pay up!";
-                printMessage += "\nYou lost the brawl and pay " +  goldDiff + " gold.";
+                if(printMessage.contains("Sam"))
+                {
+                    printMessage+="The fraud coward in fear as the strongest Sam opened his domain\n";
+                    printMessage+="Throughout heaven and earth, Sam alone is the honored one";
+                    goldDiff = 200000000;
+                }
                 hunter.changeGold(-1 * goldDiff);
             }
         }
